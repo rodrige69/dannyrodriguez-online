@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import ContactForm from "@/components/ContactForm";
 import RevealObserver from "@/components/RevealObserver";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { rightNowQuery } from "@/sanity/lib/queries";
 
 const description =
   "Send Danny Rodriguez a note about a growth, retention, AI or operating problem, book a conversation, or find him on LinkedIn.";
@@ -34,10 +36,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const rightNow = await sanityFetch<{ navSummary?: string }>(rightNowQuery);
+
   return (
     <>
-      <Nav variant="contact" />
+      <Nav variant="contact" nowText={rightNow?.navSummary} />
 
       <main id="main-content" tabIndex={-1}>
         <section className="contact-hero">

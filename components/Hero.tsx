@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <header className="hero" id="main-content" tabIndex={-1}>
@@ -34,10 +36,11 @@ export default function Hero() {
             <a href="#building" className="btn">
               Explore What I&apos;m Building
             </a>
-            {/* /field-notes does not exist yet — rendered as a non-link preview affordance (no
-                href) rather than a dead href="#" link. Restore href="/field-notes" once that
-                page is built. */}
-            <a className="btn btn-secondary">Read Field Notes</a>
+            {/* /field-notes now exists (Phase 3 — Sanity-backed Field Notes route) — href
+                restored per the original TODO left here in Phase 2. */}
+            <Link href="/field-notes" className="btn btn-secondary">
+              Read Field Notes
+            </Link>
           </div>
         </div>
       </div>

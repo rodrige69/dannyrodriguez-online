@@ -5,12 +5,16 @@ import Link from "next/link";
 
 type NavProps = {
   variant: "home" | "contact";
+  // Right Now, Sanity-managed (see sanity/schemaTypes/rightNow.ts). Optional and defaulted so
+  // the nav renders exactly as before if Sanity has no content yet or is unreachable — this is
+  // the same string that used to be hardcoded here.
+  nowText?: string;
 };
 
 // Nav — same markup/behavior on both pages, just the anchor targets and the trailing action
 // differ (homepage links are same-page hashes + a "Let's Talk" CTA; contact page links point
 // back at the homepage sections + a quiet "← Home" link instead).
-export default function Nav({ variant }: NavProps) {
+export default function Nav({ variant, nowText = "RetainOS + AI Operations" }: NavProps) {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export default function Nav({ variant }: NavProps) {
       </div>
       <div className="nav-status">
         <span className="live-dot" />
-        NOW — RetainOS + AI Operations
+        NOW — {nowText}
       </div>
       <div className="nav-actions">
         {variant === "home" ? (
