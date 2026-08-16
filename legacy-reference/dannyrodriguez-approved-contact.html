@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Danny Rodriguez</title>
+<meta name="description" content="Send Danny Rodriguez a note about a growth, retention, AI or operating problem, book a conversation, or find him on LinkedIn.">
+
+<!-- Canonical — SEO Baseline (Master Technical Migration + Sanity Handoff, §29). -->
+<link rel="canonical" href="https://dannyrodriguez.online/contact">
+
+<meta property="og:title" content="Contact — Danny Rodriguez">
+<meta property="og:description" content="Send Danny Rodriguez a note about a growth, retention, AI or operating problem, book a conversation, or find him on LinkedIn.">
+<meta property="og:url" content="https://dannyrodriguez.online/contact">
+<meta property="og:image" content="https://dannyrodriguez.online/assets/danny-rodriguez-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Danny Rodriguez — Pattern-Recognition Operator.">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card — SEO Baseline pass, mirrors Open Graph above. -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Danny Rodriguez">
+<meta name="twitter:description" content="Send Danny Rodriguez a note about a growth, retention, AI or operating problem, book a conversation, or find him on LinkedIn.">
+<meta name="twitter:image" content="https://dannyrodriguez.online/assets/danny-rodriguez-og.jpg">
+
+<!-- Favicon: approved DR monogram (cyan mark on obsidian), installed as a standard icon set.
+     Root-relative paths so this resolves correctly from both / and /contact. -->
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/assets/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@200;300;400;500;600;700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+    /* ============ SHARED TOKENS + COMPONENTS — copied verbatim from the homepage so this page
+       reads as a direct continuation, not a reinterpretation. Anything below this block is new,
+       scoped to Contact only. ============ */
+    :root {
+        --bg-base: #0A0C10;
+        --bg-surface: #0D1015;
+        --bg-elevated: #12151B;
+        --bg-card: #171B23;
+        --text-bone: #E9E4DA;
+        --text-muted: #8E96A6;
+        --text-dim: #565F70;
+        --accent-cyan: #4DE8E0;
+        --accent-cyan-dim: rgba(77, 232, 224, 0.15);
+        --accent-warm: #D4A574;
+        --border-subtle: rgba(231, 234, 240, 0.08);
+        --border-glow: rgba(77, 232, 224, 0.25);
+
+        --font-serif: 'Cormorant Garamond', serif;
+        --font-sans: 'Manrope', sans-serif;
+        --font-mono: 'Space Mono', monospace;
+
+        --text-base: clamp(1rem, 2vw, 1.125rem);
+
+        --space-lg: 4rem;
+        --space-xl: 6rem;
+        --space-2xl: 8rem;
+
+        --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg-base); color: var(--text-bone); font-family: var(--font-sans); font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    ::selection { background: var(--text-bone); color: var(--bg-base); }
+
+    .noise-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    h1, h2, .serif { font-family: var(--font-serif); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; }
+    p { color: var(--text-muted); margin-bottom: 1.5rem; }
+    a { color: var(--text-bone); text-decoration: none; transition: color 0.6s var(--ease-cinematic); }
+
+    .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 max(5vw, 2rem); }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    .skip-link {
+        position: absolute; top: -80px; left: 1rem; z-index: 10001;
+        background: var(--bg-elevated); color: var(--text-bone); border: 1px solid var(--accent-cyan);
+        padding: 0.75rem 1.25rem; font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;
+        text-decoration: none; transition: top 0.3s var(--ease-cinematic);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--accent-cyan); outline-offset: 3px; border-radius: 1px;
+    }
+
+    .btn {
+        display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;
+        padding: 1.15rem 2.25rem; color: var(--bg-base); background: var(--accent-cyan); letter-spacing: 0.01em;
+        transition: all 0.5s var(--ease-cinematic); border: 1px solid var(--accent-cyan); cursor: pointer;
+    }
+    .btn:hover { background: var(--text-bone); border-color: var(--text-bone); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--text-bone); border: 1px solid rgba(233, 228, 218, 0.3); }
+    .btn-secondary:hover { background: rgba(233, 228, 218, 0.08); border-color: var(--text-bone); }
+
+    nav {
+        position: fixed; top: 0; left: 0; width: 100%; padding: 2rem max(5vw, 2rem); display: flex; justify-content: space-between;
+        align-items: center; z-index: 100; transition: background 0.8s var(--ease-cinematic), padding 0.8s var(--ease-cinematic);
+    }
+    nav.scrolled { background: rgba(10, 12, 16, 0.85); backdrop-filter: blur(20px); padding: 1.25rem max(5vw, 2rem); border-bottom: 1px solid var(--border-subtle); }
+    .nav-brand { font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; }
+    .nav-links a { color: var(--text-muted); position: relative; padding-bottom: 0.25rem; }
+    .nav-links a::after {
+        content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: var(--accent-cyan);
+        transform: scaleX(0); transform-origin: right; transition: transform 0.6s var(--ease-cinematic);
+    }
+    .nav-links a:hover { color: var(--text-bone); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-status { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); display: flex; align-items: center; gap: 0.6rem; }
+    .nav-status .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent-cyan); animation: livePulse 2s infinite; flex-shrink: 0; }
+    @keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @media (max-width: 1150px) { .nav-links, .nav-status { display: none; } }
+
+    /* Nav's CTA slot: on every other page this is the primary "Let's Talk" button. On the
+       Contact page itself that would be circular (the whole page is already that CTA), so it's a
+       quiet text link back home instead — same slot, same nav rhythm, no redundant second cyan
+       button competing with the page's own primary action below. */
+    .nav-home-link { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; color: var(--text-muted); transition: color 0.6s var(--ease-cinematic); }
+    .nav-home-link:hover { color: var(--text-bone); }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1.2s var(--ease-cinematic), transform 1.2s var(--ease-cinematic); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+
+    /* ============ CONTACT — page-specific, new this pass ============ */
+
+    /* Intro — mirrors the homepage's Final CTA register on purpose: no eyebrow label, centered,
+       same headline/subhead scale as .cta-headline/.cta-body rather than a new type scale. That
+       section's own rule was "no eyebrow — meant to read as a direct address, not a section";
+       the entire Contact page is that same direct address, so the same rule applies here. */
+    .contact-hero { padding-top: 15vh; padding-bottom: var(--space-xl); text-align: center; }
+    .contact-hero-content { max-width: 640px; margin: 0 auto; }
+    .contact-headline { font-size: clamp(2.1rem, 3.8vw, 3.2rem); margin-bottom: 1rem; color: var(--text-bone); }
+    .contact-sub { font-size: 1.05rem; max-width: 520px; margin: 0 auto; }
+
+    /* Grid — same 1.1fr/0.9fr asymmetry as Many Nickles' .personal-grid (Building section),
+       reused under its own class name per this project's convention: borrow the vocabulary,
+       don't share classes across pages, so each stays independently editable. */
+    .contact-section { padding-bottom: var(--space-2xl); }
+    .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start; }
+
+    /* Path mark — same tick+numeral device as What I Look For's .lookfor-mark, reused under its
+       own class name. Purely decorative numbering; the actual accessible heading for each path
+       is the h2 that follows it (see .contact-path-title), same separation Lookfor uses between
+       its numeral and its real title. */
+    .contact-mark { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem; }
+    .contact-mark .contact-tick { width: 20px; height: 1px; background: var(--text-dim); flex-shrink: 0; }
+    .contact-mark .contact-num { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--text-muted); }
+    .contact-path-title { font-family: var(--font-sans); font-weight: 600; font-size: 1.1rem; color: var(--text-bone); margin-bottom: 0.9rem; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; max-width: 480px; }
+    .field { display: flex; flex-direction: column; gap: 0.6rem; }
+    .field label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+    /* Editorial, understated inputs — no giant rounded corners, no CRM look: a quiet dark surface
+       (--bg-elevated, the same tier Many Nickles' screenshot frame uses), a hairline border, bone
+       text. Cyan is reserved for focus and the primary action only, matching the Cyan Budget. */
+    .field input, .field textarea {
+        width: 100%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 2px;
+        padding: 0.85rem 1rem; color: var(--text-bone); font-family: var(--font-sans); font-size: 0.95rem;
+        transition: border-color 0.3s var(--ease-cinematic), box-shadow 0.3s var(--ease-cinematic);
+    }
+    .field textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
+    .field input:focus, .field textarea:focus {
+        outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 0 3px var(--accent-cyan-dim);
+    }
+    /* Error state deliberately doesn't invent a new "error red" — this palette doesn't have one,
+       and color shouldn't be the only signal anyway. The field border brightens to bone (a
+       "pay attention" step up from the resting hairline) and the message itself, in plain bone
+       text, is what actually communicates the problem. */
+    .field-error { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-bone); display: none; }
+    .field.has-error input, .field.has-error textarea { border-color: var(--text-bone); }
+    .field.has-error .field-error { display: block; }
+
+    .contact-submit { align-self: flex-start; margin-top: 0.25rem; }
+    .contact-submit:disabled { opacity: 0.6; cursor: default; }
+    /* Form-level submission error (network/API failure) — same visual language as .field-error:
+       plain bone text, no new color invented. Sits below the button, inside the form, since the
+       form must stay visible and populated on failure rather than being hidden or cleared. */
+    .form-submit-error { font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-bone); display: none; margin-top: -0.5rem; }
+    .form-submit-error.active { display: block; }
+
+    /* Confirmation — reuses the serif-italic "narrative moment" register already established for
+       Ghost Tax's .pe-narrative and RetainOS's .retain-transition, at a modest size so it reads as
+       a warm reply, not a transactional "thank you" banner competing with those signature lines. */
+    .contact-confirm { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.25rem, 2vw, 1.5rem); color: var(--text-bone); display: none; }
+    .contact-confirm.active { display: block; }
+    .contact-form.is-hidden { display: none; }
+
+    .contact-secondary { display: flex; flex-direction: column; }
+    .contact-path { padding: 2rem 0; }
+    .contact-path:first-child { padding-top: 0; }
+    .contact-path + .contact-path { border-top: 1px solid var(--border-subtle); }
+    .contact-path p { font-size: 0.92rem; max-width: 320px; }
+
+    /* LinkedIn — icon-only, deliberately not a .btn and no supporting copy (the numbered mark +
+       "LinkedIn" heading above it already say what it is). Touch target expanded via an invisible
+       ::before rather than real padding, same technique as .think-step's mobile hit-area fix, so
+       the icon stays flush with the heading above it instead of shifting on padding. */
+    .contact-linkedin { display: inline-flex; align-items: center; position: relative; color: var(--text-muted); }
+    .contact-linkedin:hover { color: var(--text-bone); }
+    .contact-linkedin::before { content: ''; position: absolute; top: -0.6rem; bottom: -0.6rem; left: -0.6rem; right: -0.6rem; }
+    .contact-linkedin svg { width: 22px; height: 22px; display: block; }
+
+    @media (max-width: 1024px) {
+        .contact-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+        .contact-form { max-width: 100%; }
+    }
+    @media (max-width: 700px) {
+        .contact-hero { padding-top: 12vh; padding-bottom: var(--space-lg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal { transition: none !important; opacity: 1; transform: none; }
+        .live-dot { animation: none !important; }
+    }
+</style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="noise-overlay"></div>
+
+    <nav id="navbar">
+        <a href="/" class="nav-brand">Danny Rodriguez</a>
+        <div class="nav-links">
+            <a href="/#how-i-think">Thinking</a>
+            <a href="/#building">Building</a>
+            <a href="/#retainos">Operating</a>
+            <a href="/#about">About</a>
+        </div>
+        <div class="nav-status"><span class="live-dot"></span>NOW — RetainOS + AI Operations</div>
+        <div class="nav-actions">
+            <a href="/" class="nav-home-link">← Home</a>
+        </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1 class="contact-headline reveal">Let's compare notes.</h1>
+                    <p class="contact-sub reveal delay-1">If there's an interesting growth, retention, AI or operating problem on your plate, tell me what you're seeing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container contact-grid">
+
+                <div class="contact-primary reveal delay-2">
+                    <div class="contact-mark"><span class="contact-tick"></span><span class="contact-num">01</span></div>
+                    <h2 class="contact-path-title">Send a note</h2>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="field">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" autocomplete="name" aria-describedby="name-error">
+                            <span class="field-error" id="name-error" aria-live="polite"></span>
+                        </div>
+                        <div class="field">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" autocomplete="email" aria-describedby="email-error">
+                            <span class="field-error" id="email-error" aria-live="polite"></span>
+                        </div>
+                        <div class="field">
+                            <label for="contact-message">What are you working through?</label>
+                            <textarea id="contact-message" name="message" rows="4" aria-describedby="message-error"></textarea>
+                            <span class="field-error" id="message-error" aria-live="polite"></span>
+                        </div>
+                        <button type="submit" class="btn contact-submit">Send note</button>
+                        <p class="form-submit-error" id="form-submit-error" role="alert" aria-live="polite"></p>
+                    </form>
+                    <p class="contact-confirm" id="contact-confirm">Got it — thank you. I'll read this and get back to you soon.</p>
+                </div>
+
+                <div class="contact-secondary reveal delay-3">
+                    <div class="contact-path">
+                        <div class="contact-mark"><span class="contact-tick"></span><span class="contact-num">02</span></div>
+                        <h2 class="contact-path-title">Book a conversation</h2>
+                        <p>Prefer to talk it through directly? Grab time on my calendar.</p>
+                        <a href="https://calendar.app.google/tW7uopZVevsXWFEA8" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Book a conversation</a>
+                    </div>
+                    <div class="contact-path">
+                        <div class="contact-mark"><span class="contact-tick"></span><span class="contact-num">03</span></div>
+                        <h2 class="contact-path-title">LinkedIn</h2>
+                        <a href="https://www.linkedin.com/in/dannyrodriguez/" target="_blank" rel="noopener noreferrer" class="contact-linkedin" aria-label="Danny Rodriguez's LinkedIn profile">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // nav scroll state
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 40);
+            });
+
+            // scroll reveal
+            const revealEls = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); io.unobserve(e.target); } });
+            }, { threshold: 0.15 });
+            revealEls.forEach(el => io.observe(el));
+
+            // Contact form. Client-side validation runs first (custom, not native bubbles, so the
+            // error styling matches the rest of the page and stays fully accessible; `novalidate`
+            // on the form suppresses the browser's own inconsistent bubble UI in favor of this).
+            // Only once validation passes does the form submit to Web3Forms, which relays it to
+            // the business inbox and sets Reply-To to the visitor's own email. The public
+            // Form Access Key below is not a secret — Web3Forms is designed to have this key
+            // embedded in client-side code; it is a rate-limited, domain-scoped identifier, not
+            // an SMTP credential.
+            const WEB3FORMS_ACCESS_KEY = 'ac441053-87eb-48b5-9c0a-1fc46edce0e9';
+            const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+            const WEB3FORMS_SUBJECT = "DannyRodriguez.online — New Contact";
+
+            const form = document.getElementById('contact-form');
+            const confirmEl = document.getElementById('contact-confirm');
+            const submitErrorEl = document.getElementById('form-submit-error');
+
+            function showError(field, message) {
+                const wrap = field.closest('.field');
+                wrap.classList.add('has-error');
+                field.setAttribute('aria-invalid', 'true');
+                const errorEl = wrap.querySelector('.field-error');
+                errorEl.textContent = message;
+            }
+            function clearError(field) {
+                const wrap = field.closest('.field');
+                wrap.classList.remove('has-error');
+                field.removeAttribute('aria-invalid');
+                wrap.querySelector('.field-error').textContent = '';
+            }
+            function showSubmitError(message) {
+                if (!submitErrorEl) return;
+                submitErrorEl.textContent = message;
+                submitErrorEl.classList.add('active');
+            }
+            function clearSubmitError() {
+                if (!submitErrorEl) return;
+                submitErrorEl.textContent = '';
+                submitErrorEl.classList.remove('active');
+            }
+
+            if (form) {
+                const nameField = form.querySelector('#contact-name');
+                const emailField = form.querySelector('#contact-email');
+                const messageField = form.querySelector('#contact-message');
+                const submitBtn = form.querySelector('.contact-submit');
+                let isSubmitting = false;
+
+                [nameField, emailField, messageField].forEach(f => {
+                    f.addEventListener('input', () => clearError(f));
+                });
+
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (isSubmitting) return;
+                    clearSubmitError();
+
+                    let valid = true;
+
+                    if (!nameField.value.trim()) { showError(nameField, 'Please add your name.'); valid = false; }
+                    if (!emailField.value.trim()) {
+                        showError(emailField, 'Please add your email.'); valid = false;
+                    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
+                        showError(emailField, "That email doesn't look right."); valid = false;
+                    }
+                    if (!messageField.value.trim()) { showError(messageField, "Let me know what you're working through."); valid = false; }
+
+                    if (!valid) {
+                        const firstError = form.querySelector('.has-error input, .has-error textarea');
+                        if (firstError) firstError.focus();
+                        return;
+                    }
+
+                    isSubmitting = true;
+                    let originalBtnText = '';
+                    if (submitBtn) {
+                        originalBtnText = submitBtn.textContent;
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Sending…';
+                    }
+
+                    try {
+                        const response = await fetch(WEB3FORMS_ENDPOINT, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                            body: JSON.stringify({
+                                access_key: WEB3FORMS_ACCESS_KEY,
+                                subject: WEB3FORMS_SUBJECT,
+                                name: nameField.value.trim(),
+                                email: emailField.value.trim(),
+                                message: messageField.value.trim()
+                            })
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
+                            form.classList.add('is-hidden');
+                            confirmEl.classList.add('active');
+                            confirmEl.setAttribute('tabindex', '-1');
+                            confirmEl.focus();
+                        } else {
+                            throw new Error((result && result.message) || 'Submission failed');
+                        }
+                    } catch (err) {
+                        // Network failure or a non-success response from Web3Forms. Leave the form
+                        // exactly as the visitor filled it in — do not hide it or clear any field.
+                        showSubmitError("That didn't go through — nothing you entered was lost. Please try sending it again.");
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalBtnText || 'Send note';
+                        }
+                        isSubmitting = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

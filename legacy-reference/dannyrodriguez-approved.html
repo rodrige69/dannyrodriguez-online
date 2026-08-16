@@ -1,3 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danny Rodriguez — Pattern-Recognition Operator</title>
+<meta name="description" content="Danny Rodriguez reads patterns in growth, retention, AI and operations, then builds the systems around them. 25+ years across CPG, retail, distribution and sales in the U.S., Latin America and the Caribbean.">
+
+<!-- Canonical — SEO Baseline (Master Technical Migration + Sanity Handoff, §29). -->
+<link rel="canonical" href="https://dannyrodriguez.online">
+
+<!-- Open Graph — production domain confirmed (dannyrodriguez.online). og:image now uses the
+     approved, purpose-built 1200×630 social crop (danny-rodriguez-og.jpg), replacing the interim
+     Hero-photo placeholder used during Final Production Wiring. og:image:width/height/alt added
+     for the SEO Baseline pass so crawlers/unfurlers can render the preview without a round trip. -->
+<meta property="og:title" content="Danny Rodriguez — Pattern-Recognition Operator">
+<meta property="og:description" content="Danny Rodriguez reads patterns in growth, retention, AI and operations, then builds the systems around them.">
+<meta property="og:url" content="https://dannyrodriguez.online">
+<meta property="og:image" content="https://dannyrodriguez.online/assets/danny-rodriguez-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Danny Rodriguez — Pattern-Recognition Operator.">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card — SEO Baseline pass. Same content as Open Graph above; kept as separate tags
+     since some platforms (notably X/Twitter itself) read these instead of, not in addition to,
+     Open Graph. -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Danny Rodriguez — Pattern-Recognition Operator">
+<meta name="twitter:description" content="Danny Rodriguez reads patterns in growth, retention, AI and operations, then builds the systems around them.">
+<meta name="twitter:image" content="https://dannyrodriguez.online/assets/danny-rodriguez-og.jpg">
+
+<!-- Favicon: approved DR monogram (cyan mark on obsidian), installed as a standard icon set.
+     Root-relative paths so this resolves correctly from both / and /contact. -->
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/assets/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@200;300;400;500;600;700&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Structured data — SEO Baseline pass. Restrained Person schema (per §29: "Do not stuff
+     structured data" / "Do not make unsupported claims that schema guarantees AI citations") —
+     just enough for search engines and AI answer engines to resolve who this site is about. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Danny Rodriguez",
+  "url": "https://dannyrodriguez.online",
+  "jobTitle": "Pattern-Recognition Operator",
+  "description": "Danny Rodriguez reads patterns in growth, retention, AI and operations, then builds the systems around them. 25+ years across CPG, retail, distribution and sales in the U.S., Latin America and the Caribbean.",
+  "image": "https://dannyrodriguez.online/assets/danny-rodriguez-og.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/dannyrodriguez/"
+  ]
+}
+</script>
+
+<style>
     :root {
         --bg-base: #0A0C10;
         --bg-surface: #0D1015;
@@ -754,96 +816,494 @@
         .flow-arrow.fa-repeat { animation: none !important; }
         .think-step { transition: none !important; }
     }
+</style>
+</head>
+<body>
 
-    /* Contact page nav — quiet supporting home link, shown instead of the primary CTA. */
-    .nav-home-link { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; color: var(--text-muted); transition: color 0.6s var(--ease-cinematic); }
-    .nav-home-link:hover { color: var(--text-bone); }
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    /* ============ Contact page — page-specific styles ============ */
-    .contact-hero { padding-top: 15vh; padding-bottom: var(--space-xl); text-align: center; }
-    .contact-hero-content { max-width: 640px; margin: 0 auto; }
-    .contact-headline { font-size: clamp(2.1rem, 3.8vw, 3.2rem); margin-bottom: 1rem; color: var(--text-bone); }
-    .contact-sub { font-size: 1.05rem; max-width: 520px; margin: 0 auto; }
+    <div id="preloader"><img class="dr-logo" src="/assets/apple-touch-icon.png" alt="Danny Rodriguez" width="88" height="88"></div>
+    <div class="noise-overlay"></div>
 
-    /* Grid — same 1.1fr/0.9fr asymmetry as Many Nickles' .personal-grid (Building section),
-       reused under its own class name per this project's convention: borrow the vocabulary,
-       don't share classes across pages, so each stays independently editable. */
-    .contact-section { padding-bottom: var(--space-2xl); }
-    .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start; }
+    <nav id="navbar">
+        <a href="/" class="nav-brand">Danny Rodriguez</a>
+        <div class="nav-links">
+            <a href="#how-i-think">Thinking</a>
+            <a href="#building">Building</a>
+            <a href="#retainos">Operating</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="nav-status"><span class="live-dot"></span>NOW — RetainOS + AI Operations</div>
+        <div class="nav-actions">
+            <!-- /contact is live: a working Web3Forms-backed contact form, a direct calendar
+                 booking link, and a quiet supporting LinkedIn link. -->
+            <a href="/contact" class="btn" style="padding: 0.75rem 1.5rem;">Let's Talk</a>
+        </div>
+    </nav>
 
-    /* Path mark — same tick+numeral device as What I Look For's .lookfor-mark, reused under its
-       own class name. Purely decorative numbering; the actual accessible heading for each path
-       is the h2 that follows it (see .contact-path-title), same separation Lookfor uses between
-       its numeral and its real title. */
-    .contact-mark { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem; }
-    .contact-mark .contact-tick { width: 20px; height: 1px; background: var(--text-dim); flex-shrink: 0; }
-    .contact-mark .contact-num { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--text-muted); }
-    .contact-path-title { font-family: var(--font-sans); font-weight: 600; font-size: 1.1rem; color: var(--text-bone); margin-bottom: 0.9rem; }
+    <!-- HERO — copy structure unchanged. Hero Image Integration pass: real photograph installed
+         as an atmospheric full-bleed background (see .hero-photo-atmosphere below); the earlier
+         pattern-field SVG and its now-dead JS block were removed entirely in the LAUNCH QA pass
+         (rationale for the original photo swap is in the CSS above .hero-photo-atmosphere).
+         v2 swap: assets/hero-danny-operator.jpg replaced with an identity-accurate regeneration
+         (built from Danny's real reference photos, see hero-photo-regeneration-brief.md — the
+         first version was AI-generated without real photo references). Same composition/crop
+         territory, so object-position was only nudged (70% 34% desktop / 64% 24% mobile, from
+         64%/58%) to re-center on this image's actual face position; mask/fade values untouched.
+         FINAL PRODUCTION WIRING pass: Variant A is now locked permanently as the only Hero copy
+         (headline + .hero-sub supporting line + evidence). The data-hero-variant mechanism and
+         Variant B's hide-.hero-sub CSS rule have been removed entirely — there is no longer an
+         A/B decision, so .hero-sub always renders. -->
+    <header class="hero" id="main-content" tabindex="-1">
+        <div class="hero-bg"></div>
+        <!-- Hero photograph — atmospheric full-bleed background, sits behind the copy (see CSS
+             for the mask/fade treatment). Not inside the grid: it spans the whole hero so it can
+             blend into the page edges rather than sit boxed in the right column.
+             LAUNCH QA note: width/height added below are the real source dimensions (aspect-ratio
+             hint for the browser, object-fit:cover still governs the actual rendered size — no
+             visual change). No srcset/responsive variants yet — this is the LCP image and is
+             served at full 1536px width to every viewport including mobile. Not built here since
+             the planned Sanity CMS image pipeline will generate responsive variants natively;
+             documented as a production integration requirement rather than hand-rolled now. -->
+        <div class="hero-photo-atmosphere">
+            <img src="assets/hero-danny-operator.jpg" alt="Danny Rodriguez smiling at his desk at night, trading and market monitors lit beside him, the city visible through the window behind." loading="eager" fetchpriority="high" width="1536" height="1024">
+        </div>
+        <div class="hero-photo-fade"></div>
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="hero-kicker reveal delay-1">
+                    <span class="kicker-rule"></span>
+                    <span>Pattern-Recognition Operator</span>
+                </div>
+                <h1>
+                    <span class="reveal reveal-block delay-2">I read patterns.</span>
+                    <span class="reveal reveal-block delay-3">Then I <em>build</em></span>
+                    <span class="reveal reveal-block delay-4">around them.</span>
+                </h1>
+                <p class="hero-sub reveal delay-5">Across markets, customers, technology and business, the signals change. The patterns don't.</p>
+                <div class="btn-group reveal delay-5">
+                    <a href="#building" class="btn">Explore What I'm Building</a>
+                    <!-- /field-notes does not exist yet — rendered as a non-link preview affordance
+                         (no href) rather than a dead href="#" link. Classes/markup otherwise
+                         identical, so appearance is unchanged; restore href="/field-notes" once
+                         that page is built. -->
+                    <a class="btn btn-secondary">Read Field Notes</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; max-width: 480px; }
-    .field { display: flex; flex-direction: column; gap: 0.6rem; }
-    .field label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
-    /* Editorial, understated inputs — no giant rounded corners, no CRM look: a quiet dark surface
-       (--bg-elevated, the same tier Many Nickles' screenshot frame uses), a hairline border, bone
-       text. Cyan is reserved for focus and the primary action only, matching the Cyan Budget. */
-    .field input, .field textarea {
-        width: 100%; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 2px;
-        padding: 0.85rem 1rem; color: var(--text-bone); font-family: var(--font-sans); font-size: 0.95rem;
-        transition: border-color 0.3s var(--ease-cinematic), box-shadow 0.3s var(--ease-cinematic);
-    }
-    .field textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
-    .field input::placeholder, .field textarea::placeholder { color: var(--text-dim); }
-    .field input:focus, .field textarea:focus {
-        outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 0 3px var(--accent-cyan-dim);
-    }
-    /* Error state deliberately doesn't invent a new "error red" — this palette doesn't have one,
-       and color shouldn't be the only signal anyway. The field border brightens to bone (a
-       "pay attention" step up from the resting hairline) and the message itself, in plain bone
-       text, is what actually communicates the problem. */
-    .field-error { font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-bone); display: none; }
-    .field.has-error input, .field.has-error textarea { border-color: var(--text-bone); }
-    .field.has-error .field-error { display: block; }
+    <!-- EVIDENCE STRIP — LOCKED -->
+    <div class="evidence-strip reveal">
+        <div class="container">
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <div class="evidence-mark">25+</div>
+                    <div class="evidence-label">Years<br>CPG + Retail</div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-mark">15</div>
+                    <div class="evidence-label">Markets<br>LATAM + Caribbean</div>
+                </div>
+                <div class="evidence-item">
+                    <div class="evidence-mark">MIA ↔ BOG</div>
+                    <div class="evidence-label">Operating Perspective</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    .contact-submit { align-self: flex-start; margin-top: 0.25rem; }
-    .contact-submit:disabled { opacity: 0.6; cursor: default; }
-    /* Form-level submission error (network/API failure) — same visual language as .field-error:
-       plain bone text, no new color invented. Sits below the button, inside the form, since the
-       form must stay visible and populated on failure rather than being hidden or cleared. */
-    .form-submit-error { font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-bone); display: none; margin-top: -0.5rem; }
-    .form-submit-error.active { display: block; }
+    <!-- WHAT I LOOK FOR — Phase 3A copy (Phase 1) unchanged, still section (no motion beyond
+         standard .reveal stagger below). Lookfor Visual Intelligence pass: .lookfor-num is now
+         wrapped in .lookfor-mark (tick + numeral) — see CSS above .lookfor-section for the full
+         rationale (thread/tick/mark/stagger). Copy content itself (01/02/03 + all three titles
+         and sentences) is untouched. -->
+    <section id="look-for" class="lookfor-section">
+        <div class="container">
+            <div class="lookfor-intro reveal">
+                <span class="eyebrow-label">What I Look For</span>
+                <h2>The expensive things businesses learn to live with.</h2>
+            </div>
 
-    /* Confirmation — reuses the serif-italic "narrative moment" register already established for
-       Ghost Tax's .pe-narrative and RetainOS's .retain-transition, at a modest size so it reads as
-       a warm reply, not a transactional "thank you" banner competing with those signature lines. */
-    .contact-confirm { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.25rem, 2vw, 1.5rem); color: var(--text-bone); display: none; }
-    .contact-confirm.active { display: block; }
-    .contact-form.is-hidden { display: none; }
+            <div class="lookfor-grid">
+                <div class="lookfor-item reveal delay-1">
+                    <div class="lookfor-mark"><span class="lookfor-tick"></span><span class="lookfor-num">01</span></div>
+                    <h3 class="lookfor-title">Lost Value</h3>
+                    <p class="lookfor-body">Revenue that should have returned. A customer buys, then quietly disappears.</p>
+                </div>
+                <div class="lookfor-item reveal delay-2">
+                    <div class="lookfor-mark"><span class="lookfor-tick"></span><span class="lookfor-num">02</span></div>
+                    <h3 class="lookfor-title">Manual Friction</h3>
+                    <p class="lookfor-body">Work people shouldn't still be doing. The same research and follow-up, over and over.</p>
+                </div>
+                <div class="lookfor-item reveal delay-3">
+                    <div class="lookfor-mark"><span class="lookfor-tick"></span><span class="lookfor-num">03</span></div>
+                    <h3 class="lookfor-title">Missed Signals</h3>
+                    <p class="lookfor-body">Information that looks unrelated — until it isn't. Customer behavior. Market movement. Operational data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    .contact-secondary { display: flex; flex-direction: column; }
-    .contact-path { padding: 2rem 0; }
-    .contact-path:first-child { padding-top: 0; }
-    .contact-path + .contact-path { border-top: 1px solid var(--border-subtle); }
-    .contact-path p { font-size: 0.92rem; max-width: 320px; }
+    <!-- THE GHOST TAX™ — Phase 3B: retimed so New Client → First Visit → Service Delivered hold a
+         steady 0.5s cadence (0s / 0.5s / 1s), that cadence visibly breaks with a 1.8s gap before
+         Silence (2.8s), and Client Disappears arrives later still (4.3s), already faint, then
+         dims further (5.3s+, see CSS). Narrative line lands at 5.8s. First prominent occurrence
+         of the name carries the ™ per approved copy rule; not repeated elsewhere on the page. -->
+    <section id="ghost-tax" class="pattern-example-section">
+        <div class="container">
+            <div class="pe-intro reveal">
+                <span class="eyebrow-label">One I Noticed</span>
+                <h2 class="sr-only">One I Noticed: The Ghost Tax</h2>
+            </div>
 
-    /* LinkedIn — icon-only, deliberately not a .btn and no supporting copy (the numbered mark +
-       "LinkedIn" heading above it already say what it is). Touch target expanded via an invisible
-       ::before rather than real padding, same technique as .think-step's mobile hit-area fix, so
-       the icon stays flush with the heading above it instead of shifting on padding. */
-    .contact-linkedin { display: inline-flex; align-items: center; position: relative; color: var(--text-muted); }
-    .contact-linkedin:hover { color: var(--text-bone); }
-    .contact-linkedin::before { content: ''; position: absolute; top: -0.6rem; bottom: -0.6rem; left: -0.6rem; right: -0.6rem; }
-    .contact-linkedin svg { width: 22px; height: 22px; display: block; }
+            <div class="pe-sequence">
+                <div class="pe-stage reveal" style="transition-delay: 0s;"><span class="pe-dot"></span><span class="pe-label">New Client</span></div>
+                <div class="pe-stage reveal" style="transition-delay: 0.5s;"><span class="pe-dot"></span><span class="pe-label">First Visit</span></div>
+                <div class="pe-stage reveal" style="transition-delay: 1s;"><span class="pe-dot"></span><span class="pe-label">Service Delivered</span></div>
+                <div class="pe-stage pe-stage-silence reveal" style="transition-delay: 2.8s;"><span class="pe-dot"></span><span class="pe-label">Silence</span></div>
+                <div class="pe-stage pe-stage-fade reveal" style="transition-delay: 4.3s;"><span class="pe-dot"></span><span class="pe-label">Client Disappears</span></div>
+            </div>
 
-    @media (max-width: 1024px) {
-        .contact-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
-        .contact-form { max-width: 100%; }
-    }
-    @media (max-width: 700px) {
-        .contact-hero { padding-top: 12vh; padding-bottom: var(--space-lg); }
-    }
+            <p class="pe-narrative reveal" style="transition-delay: 5.8s;">Everyone was measuring how the client arrived. I got interested in what happened after they left. I called that gap the <em>Ghost Tax™</em>.</p>
+        </div>
+    </section>
 
-    @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        .reveal { transition: none !important; opacity: 1; transform: none; }
-        .live-dot { animation: none !important; }
-    }
+    <!-- RETAINOS — Phase 3B: evidence fields now reveal individually (each its own .reveal with
+         an inline delay) instead of arriving together, so the neutral data resolves first and
+         RETURN RISK DETECTED — the first cyan event after Ghost Tax — only appears after a real
+         pause. 2.1s below must stay matched with .signal-flag-dot's animation-delay in the CSS. -->
+    <section id="retainos" class="retainos-section">
+        <div class="container">
+            <p class="retain-transition reveal">So I built around it.</p>
+            <div class="retain-main">
+                <div class="build-status reveal delay-1"><span class="status-rule status-rule-cyan"></span><span class="status-text">Active</span></div>
+                <h2 class="build-name reveal delay-1">RetainOS</h2>
+                <p class="build-desc reveal delay-1">Retention infrastructure for businesses where the second visit matters more than the first.</p>
+                <div class="retain-signal">
+                    <div class="signal-id reveal delay-1">Client 0472</div>
+                    <div class="signal-row reveal" style="transition-delay: 0.4s;"><span class="signal-label">Last visit</span><span class="signal-value">63 days</span></div>
+                    <div class="signal-row reveal" style="transition-delay: 0.7s;"><span class="signal-label">Expected return</span><span class="signal-value">35–45 days</span></div>
+                    <div class="signal-flag reveal" style="transition-delay: 2.1s;"><span class="signal-flag-dot"></span>Return Risk Detected</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT I'M BUILDING — Phase 3C: Hermes trace no longer carries inline animation-name (JS
+         now drives it once on view-entry — see script). Many Nickles placeholder relabeled and
+         its container fixed (see CSS) so it reads as reserved evidence space, not empty space. -->
+    <section id="building" class="building-section">
+        <div class="container">
+            <div class="build-intro reveal">
+                <span class="eyebrow-label">What I'm Building</span>
+                <h2 class="sr-only">What I'm Building</h2>
+            </div>
+
+            <div class="build-row build-row-secondary reveal delay-1">
+                <div class="build-status"><span class="status-rule status-rule-cyan"></span><span class="status-text">Active</span></div>
+                <h3 class="build-name">AI Operations / Hermes</h3>
+                <p class="build-desc">The agent infrastructure running underneath everything else I build and operate.</p>
+                <div class="hermes-trace">
+                    <p class="trace-request">“Find every client who's gone quiet this month.”</p>
+                    <div class="trace-steps">
+                        <span class="trace-step">Researching</span>
+                        <span class="trace-step">Analyzing</span>
+                        <span class="trace-step">Routing</span>
+                        <span class="trace-step">Executing</span>
+                        <span class="trace-step">Reporting Back</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="build-row build-row-personal reveal delay-2">
+                <div class="build-status"><span class="status-rule status-rule-warm"></span><span class="status-text">Personal Build</span></div>
+                <div class="personal-grid">
+                    <div class="personal-shot">
+                        <!-- Real Many Nickles dashboard screenshot — Overview tab, market-hours
+                             ticker/regime/category-movers/sector-flows view. Real interface, real
+                             numbers, not a fabricated mockup. -->
+                        <img src="assets/many-nickles-dashboard.jpg" alt="Many Nickles trading dashboard overview: live ticker tape, market regime status, category movers, and sector inflow/outflow data." loading="lazy" width="1360" height="1042">
+                    </div>
+                    <div class="personal-text">
+                        <h3 class="build-name">Many Nickles</h3>
+                        <p class="build-desc">My father wanted a simpler way to understand the market. So I built him one.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /building does not exist yet — rendered as a non-link preview affordance (no
+                 href) rather than a dead href="#" link. Classes/markup otherwise identical, so
+                 appearance is unchanged; restore href="/building" once that page is built. -->
+            <a class="build-exit reveal delay-3">See everything I'm building <span class="build-exit-arrow">→</span></a>
+        </div>
+    </section>
+
+    <!-- HOW I THINK — Discoverability Pass: Observe now opens by default on load (see JS below
+         .think-rail's event listeners) so the interaction is demonstrated once rather than relying
+         on incidental hover discovery. No markup/CSS changed for this pass — the default-open
+         state runs through the exact same activateStep() function as hover/focus/tap, so it
+         inherits the existing single-active-step guarantee and loop-arc gating automatically.
+         LOCKED as of this pass: interaction model, colors, copy, and loop-arc behavior are
+         unchanged and approved. -->
+    <section id="how-i-think" class="think-section">
+        <div class="container">
+            <div class="think-intro reveal">
+                <span class="eyebrow-label">How I Think</span>
+                <h2>Most opportunities don't announce themselves.<br>They show up as <em>patterns.</em></h2>
+            </div>
+
+            <div class="think-rail reveal delay-1">
+                <div class="think-node">
+                    <button class="think-step" data-target="reveal-observe" aria-expanded="false" aria-controls="reveal-observe">Observe</button>
+                    <div class="think-reveal" id="reveal-observe"><div class="think-reveal-inner"><p>A client disappears after visit one.</p></div></div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="think-node">
+                    <button class="think-step" data-target="reveal-recognize" aria-expanded="false" aria-controls="reveal-recognize">Recognize</button>
+                    <div class="think-reveal" id="reveal-recognize"><div class="think-reveal-inner"><p>The behavior repeats across businesses.</p></div></div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="think-node">
+                    <button class="think-step" data-target="reveal-frame" aria-expanded="false" aria-controls="reveal-frame">Frame</button>
+                    <div class="think-reveal" id="reveal-frame"><div class="think-reveal-inner"><p>Name the hidden problem.</p></div></div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="think-node">
+                    <button class="think-step" data-target="reveal-build" aria-expanded="false" aria-controls="reveal-build">Build</button>
+                    <div class="think-reveal" id="reveal-build"><div class="think-reveal-inner"><p>Create a system around it.</p></div></div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="think-node">
+                    <button class="think-step" data-target="reveal-test" aria-expanded="false" aria-controls="reveal-test">Test</button>
+                    <div class="think-reveal" id="reveal-test"><div class="think-reveal-inner"><p>See whether behavior changes.</p></div></div>
+                </div>
+            </div>
+            <svg class="loop-arc" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
+                <path class="loop-arc-path" d="M 97 4 Q 50 22 3 4"/>
+                <path class="loop-arc-head" d="M 3 4 L 9 2 M 3 4 L 8 8"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE — Editorial Compression Pass, approved and implemented on top of the locked
+         Phase 3E copy (Ch.3's lead line — "I started paying attention to what stopped happening."
+         — is unchanged from that approval). Each chapter's .exp-body paragraph has been removed
+         from the DOM (see CSS comment above .experience-section for the full rationale); only the
+         label (SIGNAL) and lead line (LESSON) remain visible per chapter, with differential weight
+         across the four (.exp-recede / .exp-elevate / .exp-bridge) rather than four identical
+         blocks. LOCKED as of this pass: everything from Hero through Experience is approved and
+         should not be modified in later phases. -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="exp-intro reveal">
+                <span class="eyebrow-label">Experience</span>
+                <h2>The map changed.<br>The work kept teaching me things.</h2>
+            </div>
+
+            <div class="exp-chapter reveal delay-1">
+                <div class="exp-chapter-head">
+                    <h3 class="exp-label">LATAM + Caribbean · CPG / Retail</h3>
+                    <span class="exp-evidence">15 Markets</span>
+                </div>
+                <p class="exp-lead">Products taught me to watch behavior, not assumptions.</p>
+            </div>
+
+            <div class="exp-chapter exp-drift-2 exp-recede reveal delay-2">
+                <div class="exp-chapter-head">
+                    <h3 class="exp-label">Distribution + Commercial</h3>
+                </div>
+                <p class="exp-lead">Getting onto the shelf was only half the problem.</p>
+            </div>
+
+            <div class="exp-chapter exp-drift-3 exp-elevate reveal delay-3">
+                <div class="exp-chapter-head">
+                    <h3 class="exp-label">Sales + Customer</h3>
+                </div>
+                <p class="exp-lead">I started paying attention to what stopped happening.</p>
+            </div>
+
+            <div class="exp-chapter exp-drift-4 exp-bridge reveal delay-4">
+                <div class="exp-chapter-head">
+                    <h3 class="exp-label">Systems + AI</h3>
+                </div>
+                <p class="exp-lead">Eventually I stopped doing everything manually.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT — Phase 3E: body copy rewritten to cut résumé language. Headline preserved
+         verbatim per brief. -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-intro reveal">
+                <span class="eyebrow-label">About</span>
+                <h2>I've spent a career moving between categories, countries and problems.</h2>
+                <div class="about-body">
+                    <p>Miami is home. Bogotá is where I spend enough time that it's become part of how I see things too — different pace, and just enough distance from everything else to notice what I'd otherwise miss.</p>
+                    <p>My career never followed a straight line — twenty-plus years moving between products, retail, distribution and sales, mostly across the U.S., Latin America and the Caribbean. I learned more from the differences between those rooms than from any one of them.</p>
+                    <p>These days that shows up in retention systems, in what I'm building with AI, and in whatever problem happens to be in front of me. Same habit. Different rooms.</p>
+                </div>
+            </div>
+            <div class="about-photo reveal delay-2">
+                <!-- Asset integrated (Phase: About Image Only). Real environmental/candid portrait
+                     — Bogotá café, notebook and coffee, window onto the city. Existing soft-mask
+                     wrapper and object-fit:cover treatment reused unchanged; only object-position
+                     (above) was added, tuned to this specific photograph. -->
+                <div class="about-photo-wrapper">
+                    <img src="assets/about-danny-bogota.jpg" alt="Danny Rodriguez writing in a notebook at a café table in Bogotá, coffee in hand, the city visible through the window behind him." loading="lazy" width="1448" height="1086">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA — Phase 3E: body copy tightened. Headline, subhead and button preserved
+         verbatim per brief. -->
+    <section id="lets-talk" class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-headline">See something I might see differently?</h2>
+                <p class="cta-subhead">Let's compare notes.</p>
+                <p class="cta-body">If there's an interesting growth, retention, AI or operating problem on your plate, I'd like to hear about it.</p>
+                <!-- Wired to /contact, same live page as nav's "Let's Talk." -->
+                <a href="/contact" class="btn">Let's Talk →</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // preloader
+            window.addEventListener('load', () => {
+                setTimeout(() => document.getElementById('preloader').classList.add('hide'), 900);
+            });
+            setTimeout(() => document.getElementById('preloader').classList.add('hide'), 1800);
+
+            // nav scroll state
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 40);
+            });
+
+            // scroll reveal
+            const revealEls = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); io.unobserve(e.target); } });
+            }, { threshold: 0.15 });
+            revealEls.forEach(el => io.observe(el));
+
+            // How I Think — hover/focus activates on desktop (fluid, momentary, releases on
+            // mouse-out/blur). Tap toggles on touch devices (persistent, since touch has no
+            // hover to release it). Only one stage active at a time either way. The loop-arc
+            // (Test → Observe) reveals only while Test is the active stage.
+            const steps = document.querySelectorAll('.think-step');
+            const stepsArr = Array.from(steps);
+            const arrows = Array.from(document.querySelectorAll('.flow-arrow'));
+            const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            const loopArc = document.querySelector('.loop-arc');
+
+            // Signal -> repetition -> connection -> system -> feedback: a restrained per-stage
+            // touch built entirely from components already on the page (arrow opacity/motion,
+            // the existing active underline, the loop arc) — no new colors, no icons.
+            function clearSignatureEffects() {
+                arrows.forEach(a => a.classList.remove('fa-repeat', 'fa-connect'));
+            }
+            function applySignatureEffect(step) {
+                clearSignatureEffects();
+                const idx = stepsArr.indexOf(step);
+                if (idx === 1 && arrows[0]) {
+                    arrows[0].classList.add('fa-repeat');       // Recognize — repetition
+                } else if (idx === 2) {                          // Frame — connection (both sides)
+                    if (arrows[1]) arrows[1].classList.add('fa-connect');
+                    if (arrows[2]) arrows[2].classList.add('fa-connect');
+                }
+                // Build (idx 3) is handled purely via CSS on [aria-expanded="true"].
+                // Test (idx 4) is handled via loopArc below.
+            }
+
+            function activateStep(step) {
+                steps.forEach(s => {
+                    const on = s === step;
+                    s.setAttribute('aria-expanded', on ? 'true' : 'false');
+                    document.getElementById(s.dataset.target).classList.toggle('open', on);
+                });
+                applySignatureEffect(step);
+                if (loopArc) loopArc.classList.toggle('active', step.dataset.target === 'reveal-test');
+            }
+            function deactivateAll() {
+                steps.forEach(s => {
+                    s.setAttribute('aria-expanded', 'false');
+                    document.getElementById(s.dataset.target).classList.remove('open');
+                });
+                clearSignatureEffects();
+                if (loopArc) loopArc.classList.remove('active');
+            }
+
+            steps.forEach(step => {
+                if (canHover) {
+                    step.addEventListener('mouseenter', () => activateStep(step));
+                    step.addEventListener('focus', () => activateStep(step));
+                    step.addEventListener('mouseleave', () => { if (!step.matches(':focus-visible')) deactivateAll(); });
+                    step.addEventListener('blur', () => { if (!step.matches(':hover')) deactivateAll(); });
+                } else {
+                    step.addEventListener('click', () => {
+                        const isOpen = step.getAttribute('aria-expanded') === 'true';
+                        isOpen ? deactivateAll() : activateStep(step);
+                    });
+                }
+            });
+
+            // Default-open Observe — How I Think Discoverability Pass. cursor:pointer was the
+            // only existing signal that these five words are interactive, and hover-only
+            // affordances have a near-zero incidental discovery rate — there's nothing to see
+            // until a visitor is already hovering. Rather than adding a new device (underline,
+            // microcopy, icon, extra cyan), Observe opens by default so the mechanic is
+            // demonstrated once, identically on desktop and touch, through the exact same
+            // activateStep() path every other interaction already uses. That's what guarantees
+            // this default state inherits the existing single-active-step behavior (activateStep
+            // sets aria-expanded/open on every step, so exactly one is ever true) and the existing
+            // loop-arc gating (loopArc only activates when the active step's target is
+            // reveal-test — Observe's target is reveal-observe, so it stays inactive here). Hover,
+            // focus, tap, and blur/mouseleave-to-neutral all behave exactly as before; only the
+            // initial state changed.
+            if (stepsArr[0]) activateStep(stepsArr[0]);
+
+            // Hermes execution trace — Phase 3C: plays ONCE when the section enters view, then
+            // rests resolved. No perpetual loop. Cyan marks only whichever step is currently
+            // being worked (transient); once the sequence finishes, the final step settles to
+            // bone (not cyan) and stays there — the component never "glows" as a whole.
+            const hermesTrace = document.querySelector('.hermes-trace');
+            if (hermesTrace) {
+                const traceSteps = Array.from(hermesTrace.querySelectorAll('.trace-step'));
+                const reduceMotionTrace = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                function resolveTrace() {
+                    traceSteps.forEach(s => s.classList.remove('trace-active', 'trace-done'));
+                    traceSteps[traceSteps.length - 1].classList.add('trace-resolved');
+                }
+
+                if (reduceMotionTrace) {
+                    resolveTrace();
+                } else if (traceSteps.length) {
+                    const hermesIO = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (!entry.isIntersecting) return;
+                            hermesIO.unobserve(entry.target);
+                            const stepDelay = 550;
+                            traceSteps.forEach((step, i) => {
+                                setTimeout(() => {
+                                    traceSteps.forEach(s => s.classList.remove('trace-active'));
+                                    if (i > 0) traceSteps[i - 1].classList.add('trace-done');
+                                    step.classList.add('trace-active');
+                                }, i * stepDelay);
+                            });
+                            setTimeout(resolveTrace, traceSteps.length * stepDelay + 150);
+                        });
+                    }, { threshold: 0.35 });
+                    hermesIO.observe(hermesTrace);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
