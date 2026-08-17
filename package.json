@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sanity:login": "sanity login",
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.0",
@@ -16,7 +18,8 @@
     "next-sanity": "^13.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "sanity": "^6.9.2"
+    "sanity": "^6.9.2",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
     "@types/node": "^20",
