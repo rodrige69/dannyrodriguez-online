@@ -1,0 +1,10 @@
+node_modules
+.next
+dist
+.sanity
+.git
+.env
+.env.local
+*.log
+README.md
+legacy-reference
