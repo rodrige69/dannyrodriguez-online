@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "mdQFvsHwmJFha4BWn4EZp2UwhaoBV7VJ--ZudswuG6Y",
+  },
   icons: {
     icon: [
       { url: "/assets/favicon.ico" },
